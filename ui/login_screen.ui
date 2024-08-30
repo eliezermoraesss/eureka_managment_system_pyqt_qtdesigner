@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>161</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">* {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(186, 24, 27, 255), stop:1 rgba(102, 7, 8, 255));
+}</string>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>230</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../static/resource.qrc">:/image/image/LOGO.jpeg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>159</x>
+      <y>-1</y>
+      <width>641</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">* {
+    background-color: #ffffff;
+	font-style: &quot;Segoe UI&quot;;
+ 	color: #0B090A;
+}
+
+QLabel, QCheckBox {
+    color: #0B090A;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+QLabel#logo-enaplic {
+    margin: 5px 0;
+}
+
+QLineEdit {
+    background-color: #DFE0E2;
+    padding-left: 15px;
+    border-radius: 18px;
+	font-size: 14px;
+}
+
+QDateEdit, QComboBox {
+    background-color: #DFE0E2;
+    border: 1px solid #262626;
+    padding: 5px 10px;
+    border-radius: 10px;
+    height: 20px;
+    font-size: 16px;
+}
+
+QDateEdit::drop-down, QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 30px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QDateEdit::down-arrow, QComboBox::down-arrow {
+    image: url(../resources/images/arrow.png);
+    width: 10px;
+    height: 10px;
+}
+
+QPushButton {
+    background-color: #fbba72;
+    border: 2px;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: regular;
+}
+
+QPushButton:hover {
+    background-color: #e5383b;
+    color: #EEEEEE
+}
+
+QPushButton:pressed {
+    background-color: #6703c5;
+    color: #EEEEEE;
+}
+
+QTableWidget {
+    border: 1px solid #000000;
+    background-color: #686D76;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+QTableWidget QHeaderView::section {
+    background-color: #262626;
+    color: #A7A6A6;
+    padding: 5px;
+    height: 18px;
+}
+
+QTableWidget QHeaderView::section:horizontal {
+    border-top: 1px solid #333;
+}
+
+QTableWidget::item {
+    background-color: #363636;
+    color: #fff;
+    font-weight: bold;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+QTableWidget::item:selected {
+    background-color: #000000;
+    color: #EEEEEE;
+    font-weight: bold;
+}</string>
+    </property>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>140</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>221</width>
+       <height>41</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string>d</string>
+     </property>
+     <property name="maxLength">
+      <number>15</number>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>220</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>221</width>
+       <height>41</height>
+      </size>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>10</number>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>320</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>221</width>
+       <height>41</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string> Entrar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../static/resource.qrc">
+       <normaloff>:/icon/icon/entrar (2).png</normaloff>:/icon/icon/entrar (2).png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>370</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>221</width>
+       <height>41</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Criar uma nova conta</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../static/resource.qrc">
+       <normaloff>:/icon/icon/add-user-64.ico</normaloff>:/icon/icon/add-user-64.ico</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>420</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>221</width>
+       <height>41</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Esqueceu sua senha?</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../static/resource.qrc">
+       <normaloff>:/icon/icon/cadeado (1).png</normaloff>:/icon/icon/cadeado (1).png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>120</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Usuário</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>200</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Senha</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>500</y>
+       <width>121</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../static/resource.qrc">:/image/image/logo_enaplic_50_anos.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../static/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
