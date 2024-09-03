@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>EmailRecoveryWindow</class>
+ <widget class="QDialog" name="EmailRecoveryWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,8 +10,17 @@
     <height>400</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Eureka®</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
    <string notr="true">* {
@@ -22,7 +31,7 @@
 
 QLabel {
     color: #0B090A;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -52,7 +61,7 @@ QPushButton:pressed {
 }
 </string>
   </property>
-  <widget class="QLineEdit" name="user_field">
+  <widget class="QLineEdit" name="email_field">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -67,8 +76,13 @@ QPushButton:pressed {
      <height>41</height>
     </size>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="inputMask">
     <string/>
@@ -92,11 +106,27 @@ QPushButton:pressed {
      <height>21</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    color: #0B090A;
+    font-size: 12px;
+    font-weight: bold;
+	font-style: &quot;Segoe UI&quot;;
+}</string>
+   </property>
    <property name="text">
     <string>Digite o seu e-mail:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_save">
+  <widget class="QPushButton" name="btn_send_email">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -110,6 +140,11 @@ QPushButton:pressed {
      <width>0</width>
      <height>41</height>
     </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
@@ -143,6 +178,11 @@ QPushButton:pressed {
      <height>41</height>
     </size>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton:hover {
     background-color: #d60000;
@@ -163,25 +203,6 @@ QPushButton:pressed {
     </size>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>180</y>
-     <width>32</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="../static/resource.qrc">:/icon/icon/o-email.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QWidget" name="window_title_bar" native="true">
    <property name="geometry">
     <rect>
@@ -196,14 +217,21 @@ QPushButton:pressed {
 background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(102, 7, 8, 255), stop:1 rgba(102, 7, 8, 255));
 }</string>
    </property>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="window_title_label">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>120</x>
       <y>0</y>
-      <width>321</width>
+      <width>261</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
@@ -214,7 +242,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
 }</string>
     </property>
     <property name="text">
-     <string>Recuperação de Senha</string>
+     <string>Recuperação de senha</string>
     </property>
    </widget>
   </widget>

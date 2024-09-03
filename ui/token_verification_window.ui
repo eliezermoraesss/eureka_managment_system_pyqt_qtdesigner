@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>TokenVerificationWindow</class>
+ <widget class="QDialog" name="TokenVerificationWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,8 +10,14 @@
     <height>400</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Eureka®</string>
   </property>
   <property name="styleSheet">
    <string notr="true">* {
@@ -22,7 +28,7 @@
 
 QLabel {
     color: #0B090A;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -52,11 +58,11 @@ QPushButton:pressed {
 }
 </string>
   </property>
-  <widget class="QLineEdit" name="user_field">
+  <widget class="QLineEdit" name="token_field">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>170</y>
+     <x>160</x>
+     <y>150</y>
      <width>161</width>
      <height>41</height>
     </rect>
@@ -67,8 +73,14 @@ QPushButton:pressed {
      <height>41</height>
     </size>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
    <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
+    <enum>Qt::ClickFocus</enum>
    </property>
    <property name="inputMask">
     <string/>
@@ -83,24 +95,11 @@ QPushButton:pressed {
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="email_label">
+  <widget class="QPushButton" name="btn_verify_token">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>140</y>
-     <width>341</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Digite o token enviado para o seu e-mail:</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_save">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>280</y>
+     <x>120</x>
+     <y>300</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -110,6 +109,12 @@ QPushButton:pressed {
      <width>0</width>
      <height>41</height>
     </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>-1</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
@@ -131,8 +136,8 @@ QPushButton:pressed {
   <widget class="QPushButton" name="btn_close">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>280</y>
+     <x>250</x>
+     <y>300</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -142,6 +147,12 @@ QPushButton:pressed {
      <width>0</width>
      <height>41</height>
     </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>-1</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton:hover {
@@ -180,11 +191,18 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>130</x>
       <y>0</y>
-      <width>321</width>
+      <width>241</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
@@ -196,15 +214,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
 }</string>
     </property>
     <property name="text">
-     <string>Verificação de Token</string>
+     <string>Verificação de token</string>
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="btn_save_2">
+  <widget class="QPushButton" name="btn_new_token">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>340</y>
+     <x>160</x>
+     <y>240</y>
      <width>161</width>
      <height>41</height>
     </rect>
@@ -215,9 +233,15 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
      <height>41</height>
     </size>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton:hover {
-    background-color: #399918;
+    background-color: #00b4d8;
     color: #EEEEEE
 }</string>
    </property>
@@ -233,6 +257,34 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
      <width>24</width>
      <height>24</height>
     </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>120</y>
+     <width>261</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    color: #0B090A;
+    font-size: 12px;
+    font-weight: bold;
+	font-style: &quot;Segoe UI&quot;;
+}</string>
+   </property>
+   <property name="text">
+    <string>Digite o token enviado para o seu e-mail:</string>
    </property>
   </widget>
  </widget>

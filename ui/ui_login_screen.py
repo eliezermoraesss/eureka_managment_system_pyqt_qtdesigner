@@ -32,8 +32,8 @@ class Ui_LoginWindow(object):
         self.logo_enaplic.setScaledContents(True)
         self.logo_enaplic.setObjectName("logo_enaplic")
         self.main_area = QtWidgets.QWidget(self.centralwidget)
-        self.main_area.setGeometry(QtCore.QRect(159, -1, 641, 601))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Expanding)
+        self.main_area.setGeometry(QtCore.QRect(161, -1, 641, 601))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.main_area.sizePolicy().hasHeightForWidth())
@@ -141,13 +141,16 @@ class Ui_LoginWindow(object):
 "}")
         self.main_area.setObjectName("main_area")
         self.user_field = QtWidgets.QLineEdit(self.main_area)
-        self.user_field.setGeometry(QtCore.QRect(190, 140, 221, 41))
+        self.user_field.setGeometry(QtCore.QRect(190, 150, 221, 41))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.user_field.sizePolicy().hasHeightForWidth())
         self.user_field.setSizePolicy(sizePolicy)
         self.user_field.setMinimumSize(QtCore.QSize(221, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.user_field.setFont(font)
         self.user_field.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.user_field.setInputMask("")
         self.user_field.setText("")
@@ -155,17 +158,24 @@ class Ui_LoginWindow(object):
         self.user_field.setClearButtonEnabled(True)
         self.user_field.setObjectName("user_field")
         self.password_field = QtWidgets.QLineEdit(self.main_area)
-        self.password_field.setGeometry(QtCore.QRect(190, 220, 221, 41))
+        self.password_field.setGeometry(QtCore.QRect(190, 230, 221, 41))
         self.password_field.setMinimumSize(QtCore.QSize(221, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.password_field.setFont(font)
+        self.password_field.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.password_field.setInputMask("")
         self.password_field.setText("")
-        self.password_field.setMaxLength(10)
+        self.password_field.setMaxLength(18)
         self.password_field.setEchoMode(QtWidgets.QLineEdit.Password)
         self.password_field.setClearButtonEnabled(True)
         self.password_field.setObjectName("password_field")
         self.btn_login = QtWidgets.QPushButton(self.main_area)
-        self.btn_login.setGeometry(QtCore.QRect(190, 320, 221, 41))
+        self.btn_login.setGeometry(QtCore.QRect(190, 330, 221, 41))
         self.btn_login.setMinimumSize(QtCore.QSize(221, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.btn_login.setFont(font)
         self.btn_login.setStyleSheet("QPushButton:hover {\n"
 "    background-color: #399918;\n"
 "    color: #EEEEEE\n"
@@ -176,8 +186,11 @@ class Ui_LoginWindow(object):
         self.btn_login.setIconSize(QtCore.QSize(24, 24))
         self.btn_login.setObjectName("btn_login")
         self.btn_register = QtWidgets.QPushButton(self.main_area)
-        self.btn_register.setGeometry(QtCore.QRect(190, 370, 221, 41))
+        self.btn_register.setGeometry(QtCore.QRect(190, 380, 221, 41))
         self.btn_register.setMinimumSize(QtCore.QSize(221, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.btn_register.setFont(font)
         self.btn_register.setStyleSheet("QPushButton:hover {\n"
 "    background-color: #00b4d8;\n"
 "    color: #EEEEEE\n"
@@ -188,8 +201,11 @@ class Ui_LoginWindow(object):
         self.btn_register.setIconSize(QtCore.QSize(24, 24))
         self.btn_register.setObjectName("btn_register")
         self.btn_forget_password = QtWidgets.QPushButton(self.main_area)
-        self.btn_forget_password.setGeometry(QtCore.QRect(190, 420, 221, 41))
+        self.btn_forget_password.setGeometry(QtCore.QRect(190, 430, 221, 41))
         self.btn_forget_password.setMinimumSize(QtCore.QSize(221, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.btn_forget_password.setFont(font)
         self.btn_forget_password.setStyleSheet("QPushButton:hover {\n"
 "    background-color: #ff6700;\n"
 "    color: #EEEEEE\n"
@@ -200,10 +216,10 @@ class Ui_LoginWindow(object):
         self.btn_forget_password.setIconSize(QtCore.QSize(24, 24))
         self.btn_forget_password.setObjectName("btn_forget_password")
         self.user_label = QtWidgets.QLabel(self.main_area)
-        self.user_label.setGeometry(QtCore.QRect(200, 120, 47, 13))
+        self.user_label.setGeometry(QtCore.QRect(200, 130, 47, 13))
         self.user_label.setObjectName("user_label")
         self.password_label = QtWidgets.QLabel(self.main_area)
-        self.password_label.setGeometry(QtCore.QRect(200, 200, 51, 16))
+        self.password_label.setGeometry(QtCore.QRect(200, 210, 51, 16))
         self.password_label.setObjectName("password_label")
         self.logo_enaplic_50 = QtWidgets.QLabel(self.main_area)
         self.logo_enaplic_50.setGeometry(QtCore.QRect(500, 490, 121, 101))
@@ -223,6 +239,21 @@ class Ui_LoginWindow(object):
         self.btn_close.setIcon(icon3)
         self.btn_close.setIconSize(QtCore.QSize(36, 36))
         self.btn_close.setObjectName("btn_close")
+        self.window_title_label = QtWidgets.QLabel(self.main_area)
+        self.window_title_label.setGeometry(QtCore.QRect(110, 20, 461, 61))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.window_title_label.setFont(font)
+        self.window_title_label.setStyleSheet("QLabel {\n"
+"    background-color: transparent;\n"
+"    color: #a4161a;\n"
+"    font-size: 28px;\n"
+"    font-weight: bold;\n"
+"    font-style: \"Segoe UI\";\n"
+"}")
+        self.window_title_label.setObjectName("window_title_label")
         LoginWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(LoginWindow)
@@ -236,4 +267,5 @@ class Ui_LoginWindow(object):
         self.btn_forget_password.setText(_translate("LoginWindow", " Esqueceu sua senha?"))
         self.user_label.setText(_translate("LoginWindow", "Usuário"))
         self.password_label.setText(_translate("LoginWindow", "Senha"))
+        self.window_title_label.setText(_translate("LoginWindow", "Seja bem-vindo(a) ao Eureka!"))
 import resource_rc

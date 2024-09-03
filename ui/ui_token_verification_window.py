@@ -11,11 +11,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(480, 400)
-        Dialog.setStyleSheet("* {\n"
+class Ui_TokenVerificationWindow(object):
+    def setupUi(self, TokenVerificationWindow):
+        TokenVerificationWindow.setObjectName("TokenVerificationWindow")
+        TokenVerificationWindow.resize(480, 400)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(TokenVerificationWindow.sizePolicy().hasHeightForWidth())
+        TokenVerificationWindow.setSizePolicy(sizePolicy)
+        TokenVerificationWindow.setStyleSheet("* {\n"
 "    background-color: #ffffff;\n"
 "    font-style: \"Segoe UI\";\n"
 "     color: #0B090A;\n"
@@ -23,7 +28,7 @@ class Ui_Dialog(object):
 "\n"
 "QLabel {\n"
 "    color: #0B090A;\n"
-"    font-size: 14px;\n"
+"    font-size: 12px;\n"
 "    font-weight: bold;\n"
 "}\n"
 "\n"
@@ -52,30 +57,39 @@ class Ui_Dialog(object):
 "    color: #EEEEEE;\n"
 "}\n"
 "")
-        self.user_field = QtWidgets.QLineEdit(Dialog)
-        self.user_field.setGeometry(QtCore.QRect(70, 170, 161, 41))
-        self.user_field.setMinimumSize(QtCore.QSize(150, 41))
-        self.user_field.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.user_field.setInputMask("")
-        self.user_field.setText("")
-        self.user_field.setMaxLength(6)
-        self.user_field.setClearButtonEnabled(True)
-        self.user_field.setObjectName("user_field")
-        self.email_label = QtWidgets.QLabel(Dialog)
-        self.email_label.setGeometry(QtCore.QRect(80, 140, 341, 21))
-        self.email_label.setObjectName("email_label")
-        self.btn_save = QtWidgets.QPushButton(Dialog)
-        self.btn_save.setGeometry(QtCore.QRect(130, 280, 111, 41))
-        self.btn_save.setMinimumSize(QtCore.QSize(0, 41))
-        self.btn_save.setStyleSheet("")
+        self.token_field = QtWidgets.QLineEdit(TokenVerificationWindow)
+        self.token_field.setGeometry(QtCore.QRect(160, 150, 161, 41))
+        self.token_field.setMinimumSize(QtCore.QSize(150, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(-1)
+        self.token_field.setFont(font)
+        self.token_field.setFocusPolicy(QtCore.Qt.ClickFocus)
+        self.token_field.setInputMask("")
+        self.token_field.setText("")
+        self.token_field.setMaxLength(6)
+        self.token_field.setClearButtonEnabled(True)
+        self.token_field.setObjectName("token_field")
+        self.btn_verify_token = QtWidgets.QPushButton(TokenVerificationWindow)
+        self.btn_verify_token.setGeometry(QtCore.QRect(120, 300, 111, 41))
+        self.btn_verify_token.setMinimumSize(QtCore.QSize(0, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(-1)
+        self.btn_verify_token.setFont(font)
+        self.btn_verify_token.setStyleSheet("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icon/icon/carraca.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_save.setIcon(icon)
-        self.btn_save.setIconSize(QtCore.QSize(24, 24))
-        self.btn_save.setObjectName("btn_save")
-        self.btn_close = QtWidgets.QPushButton(Dialog)
-        self.btn_close.setGeometry(QtCore.QRect(260, 280, 111, 41))
+        self.btn_verify_token.setIcon(icon)
+        self.btn_verify_token.setIconSize(QtCore.QSize(24, 24))
+        self.btn_verify_token.setObjectName("btn_verify_token")
+        self.btn_close = QtWidgets.QPushButton(TokenVerificationWindow)
+        self.btn_close.setGeometry(QtCore.QRect(250, 300, 111, 41))
         self.btn_close.setMinimumSize(QtCore.QSize(0, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(-1)
+        self.btn_close.setFont(font)
         self.btn_close.setStyleSheet("QPushButton:hover {\n"
 "    background-color: #d60000;\n"
 "    color: #EEEEEE\n"
@@ -85,14 +99,19 @@ class Ui_Dialog(object):
         self.btn_close.setIcon(icon1)
         self.btn_close.setIconSize(QtCore.QSize(24, 24))
         self.btn_close.setObjectName("btn_close")
-        self.window_title_bar = QtWidgets.QWidget(Dialog)
+        self.window_title_bar = QtWidgets.QWidget(TokenVerificationWindow)
         self.window_title_bar.setGeometry(QtCore.QRect(0, 0, 481, 51))
         self.window_title_bar.setStyleSheet("* {\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(102, 7, 8, 255), stop:1 rgba(102, 7, 8, 255));\n"
 "}")
         self.window_title_bar.setObjectName("window_title_bar")
         self.label_2 = QtWidgets.QLabel(self.window_title_bar)
-        self.label_2.setGeometry(QtCore.QRect(90, 0, 321, 51))
+        self.label_2.setGeometry(QtCore.QRect(130, 0, 241, 51))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
         self.label_2.setStyleSheet("QLabel {\n"
 "    background-color: transparent;\n"
 "    color: #EEEEEE;\n"
@@ -101,28 +120,46 @@ class Ui_Dialog(object):
 "    font-style: \"Segoe UI\";\n"
 "}")
         self.label_2.setObjectName("label_2")
-        self.btn_save_2 = QtWidgets.QPushButton(Dialog)
-        self.btn_save_2.setGeometry(QtCore.QRect(170, 340, 161, 41))
-        self.btn_save_2.setMinimumSize(QtCore.QSize(0, 41))
-        self.btn_save_2.setStyleSheet("QPushButton:hover {\n"
-"    background-color: #399918;\n"
+        self.btn_new_token = QtWidgets.QPushButton(TokenVerificationWindow)
+        self.btn_new_token.setGeometry(QtCore.QRect(160, 240, 161, 41))
+        self.btn_new_token.setMinimumSize(QtCore.QSize(0, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(-1)
+        self.btn_new_token.setFont(font)
+        self.btn_new_token.setStyleSheet("QPushButton:hover {\n"
+"    background-color: #00b4d8;\n"
 "    color: #EEEEEE\n"
 "}")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/icon/icon/codigo-binario.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_save_2.setIcon(icon2)
-        self.btn_save_2.setIconSize(QtCore.QSize(24, 24))
-        self.btn_save_2.setObjectName("btn_save_2")
+        self.btn_new_token.setIcon(icon2)
+        self.btn_new_token.setIconSize(QtCore.QSize(24, 24))
+        self.btn_new_token.setObjectName("btn_new_token")
+        self.label = QtWidgets.QLabel(TokenVerificationWindow)
+        self.label.setGeometry(QtCore.QRect(130, 120, 261, 16))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setStyleSheet("QLabel {\n"
+"    color: #0B090A;\n"
+"    font-size: 12px;\n"
+"    font-weight: bold;\n"
+"    font-style: \"Segoe UI\";\n"
+"}")
+        self.label.setObjectName("label")
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(TokenVerificationWindow)
+        QtCore.QMetaObject.connectSlotsByName(TokenVerificationWindow)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, TokenVerificationWindow):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.email_label.setText(_translate("Dialog", "Digite o token enviado para o seu e-mail:"))
-        self.btn_save.setText(_translate("Dialog", "Verificar"))
-        self.btn_close.setText(_translate("Dialog", " Cancelar"))
-        self.label_2.setText(_translate("Dialog", "Verificação de Token"))
-        self.btn_save_2.setText(_translate("Dialog", "Gerar novo Token"))
+        TokenVerificationWindow.setWindowTitle(_translate("TokenVerificationWindow", "Eureka®"))
+        self.btn_verify_token.setText(_translate("TokenVerificationWindow", "Verificar"))
+        self.btn_close.setText(_translate("TokenVerificationWindow", " Cancelar"))
+        self.label_2.setText(_translate("TokenVerificationWindow", "Verificação de token"))
+        self.btn_new_token.setText(_translate("TokenVerificationWindow", "Gerar novo Token"))
+        self.label.setText(_translate("TokenVerificationWindow", "Digite o token enviado para o seu e-mail:"))
 import resource_rc

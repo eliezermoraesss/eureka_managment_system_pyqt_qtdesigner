@@ -25,18 +25,26 @@ class Ui_RegisterWindow(object):
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(102, 7, 8, 255), stop:1 rgba(102, 7, 8, 255));\n"
 "}")
         self.window_title_bar.setObjectName("window_title_bar")
-        self.label = QtWidgets.QLabel(self.window_title_bar)
-        self.label.setGeometry(QtCore.QRect(140, 0, 321, 51))
-        self.label.setStyleSheet("QLabel {\n"
+        self.window_title_label = QtWidgets.QLabel(self.window_title_bar)
+        self.window_title_label.setGeometry(QtCore.QRect(130, 0, 371, 51))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.window_title_label.setFont(font)
+        self.window_title_label.setStyleSheet("QLabel {\n"
 "    background-color: transparent;\n"
 "    color: #EEEEEE;\n"
 "    font-size: 28px;\n"
 "    font-weight: regular;\n"
 "    font-style: \"Segoe UI\";\n"
 "}")
-        self.label.setObjectName("label")
+        self.window_title_label.setObjectName("window_title_label")
         self.main_area = QtWidgets.QWidget(self.central_widget)
-        self.main_area.setGeometry(QtCore.QRect(159, 49, 641, 551))
+        self.main_area.setGeometry(QtCore.QRect(159, 49, 641, 601))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.main_area.sizePolicy().hasHeightForWidth())
+        self.main_area.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         self.main_area.setFont(font)
@@ -150,6 +158,8 @@ class Ui_RegisterWindow(object):
         self.email_field = QtWidgets.QLineEdit(self.main_area)
         self.email_field.setGeometry(QtCore.QRect(150, 220, 301, 41))
         self.email_field.setMinimumSize(QtCore.QSize(301, 41))
+        self.email_field.setTabletTracking(False)
+        self.email_field.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.email_field.setInputMask("")
         self.email_field.setText("")
         self.email_field.setMaxLength(30)
@@ -190,9 +200,10 @@ class Ui_RegisterWindow(object):
         self.password_field = QtWidgets.QLineEdit(self.main_area)
         self.password_field.setGeometry(QtCore.QRect(150, 300, 301, 41))
         self.password_field.setMinimumSize(QtCore.QSize(301, 41))
+        self.password_field.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.password_field.setInputMask("")
         self.password_field.setText("")
-        self.password_field.setMaxLength(10)
+        self.password_field.setMaxLength(18)
         self.password_field.setEchoMode(QtWidgets.QLineEdit.Password)
         self.password_field.setClearButtonEnabled(True)
         self.password_field.setObjectName("password_field")
@@ -201,9 +212,16 @@ class Ui_RegisterWindow(object):
         self.password_label.setObjectName("password_label")
         self.area_combobox_field = QtWidgets.QComboBox(self.main_area)
         self.area_combobox_field.setGeometry(QtCore.QRect(150, 380, 301, 41))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.area_combobox_field.sizePolicy().hasHeightForWidth())
+        self.area_combobox_field.setSizePolicy(sizePolicy)
         self.area_combobox_field.setMinimumSize(QtCore.QSize(301, 41))
         self.area_combobox_field.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.area_combobox_field.setFocusPolicy(QtCore.Qt.NoFocus)
         self.area_combobox_field.setInsertPolicy(QtWidgets.QComboBox.InsertAlphabetically)
+        self.area_combobox_field.setIconSize(QtCore.QSize(32, 32))
         self.area_combobox_field.setObjectName("area_combobox_field")
         self.area_combobox_field.addItem("")
         self.area_combobox_field.setItemText(0, "")
@@ -287,7 +305,7 @@ class Ui_RegisterWindow(object):
     def retranslateUi(self, RegisterWindow):
         _translate = QtCore.QCoreApplication.translate
         RegisterWindow.setWindowTitle(_translate("RegisterWindow", "MainWindow"))
-        self.label.setText(_translate("RegisterWindow", "Cadastro de novo usuário"))
+        self.window_title_label.setText(_translate("RegisterWindow", "Cadastro de novo usuário"))
         self.user_label.setText(_translate("RegisterWindow", "Usuário"))
         self.email_label.setText(_translate("RegisterWindow", "E-mail"))
         self.btn_close.setText(_translate("RegisterWindow", "Cancelar"))
