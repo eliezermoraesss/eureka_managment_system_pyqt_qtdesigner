@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>LoginWindow</class>
+ <widget class="QMainWindow" name="LoginWindow">
   <property name="enabled">
    <bool>true</bool>
   </property>
@@ -20,7 +20,7 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QWidget" name="sidebar_enaplic" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -34,7 +34,7 @@
 background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(186, 24, 27, 255), stop:1 rgba(102, 7, 8, 255));
 }</string>
     </property>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="logo_enaplic">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -54,7 +54,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="widget_2" native="true">
+   <widget class="QWidget" name="main_area" native="true">
     <property name="geometry">
      <rect>
       <x>159</x>
@@ -174,7 +174,7 @@ QTableWidget::item:selected {
     font-weight: bold;
 }</string>
     </property>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="user_field">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -202,7 +202,7 @@ QTableWidget::item:selected {
       <string/>
      </property>
      <property name="text">
-      <string>d</string>
+      <string/>
      </property>
      <property name="maxLength">
       <number>15</number>
@@ -211,7 +211,7 @@ QTableWidget::item:selected {
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="password_field">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -242,7 +242,7 @@ QTableWidget::item:selected {
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btn_login">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -258,7 +258,10 @@ QTableWidget::item:selected {
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">QPushButton:hover {
+    background-color: #399918;
+    color: #EEEEEE
+}</string>
      </property>
      <property name="text">
       <string> Entrar</string>
@@ -274,7 +277,7 @@ QTableWidget::item:selected {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="btn_register">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -289,8 +292,14 @@ QTableWidget::item:selected {
        <height>41</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+    background-color: #00b4d8;
+    color: #EEEEEE
+}</string>
+     </property>
      <property name="text">
-      <string>Criar uma nova conta</string>
+      <string> Criar uma nova conta</string>
      </property>
      <property name="icon">
       <iconset resource="../static/resource.qrc">
@@ -303,7 +312,7 @@ QTableWidget::item:selected {
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="btn_forget_password">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -318,8 +327,14 @@ QTableWidget::item:selected {
        <height>41</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+    background-color: #ff6700;
+    color: #EEEEEE
+}</string>
+     </property>
      <property name="text">
-      <string>Esqueceu sua senha?</string>
+      <string> Esqueceu sua senha?</string>
      </property>
      <property name="icon">
       <iconset resource="../static/resource.qrc">
@@ -332,7 +347,7 @@ QTableWidget::item:selected {
       </size>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="user_label">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -345,7 +360,7 @@ QTableWidget::item:selected {
       <string>Usuário</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="password_label">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -358,11 +373,11 @@ QTableWidget::item:selected {
       <string>Senha</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="logo_enaplic_50">
      <property name="geometry">
       <rect>
-       <x>510</x>
-       <y>500</y>
+       <x>500</x>
+       <y>490</y>
        <width>121</width>
        <height>101</height>
       </rect>
@@ -375,6 +390,40 @@ QTableWidget::item:selected {
      </property>
      <property name="scaledContents">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_close">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>10</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>41</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">* {
+	background-color: #FFF;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../static/resource.qrc">
+       <normaloff>:/icon/icon/excluir.png</normaloff>:/icon/icon/excluir.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>36</width>
+       <height>36</height>
+      </size>
      </property>
     </widget>
    </widget>

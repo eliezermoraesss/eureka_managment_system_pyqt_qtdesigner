@@ -1,10 +1,9 @@
 import sys
 
-from PyQt5.QtGui import QPainterPath, QPainter, QPalette
-from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton
-from PyQt5.QtCore import pyqtSlot, QFile, QTextStream, Qt
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QMainWindow, QApplication
 
-from ui_login_screen import Ui_MainWindow
+from ui_login_screen import Ui_LoginWindow
 
 
 class MainWindow(QMainWindow):
@@ -13,7 +12,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowFlags(Qt.FramelessWindowHint)
 
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_LoginWindow()
         self.ui.setupUi(self)
 
 
